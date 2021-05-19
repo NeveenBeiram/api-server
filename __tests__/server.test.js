@@ -1,18 +1,19 @@
 'use strict';
 
-const { server } = require('../src/server.js');
+const  server  = require('../src/server.js');
 const superTest = require('supertest');
-const request = superTest(server);
+const supergoose = require('@code-fellows/supergoose');
+const request = superTest(server.server);
 
 const mongoose=require('mongoose');
 require('dotenv').config();
 
-mongoose.connect(process.env.MONGOOSE_TEST_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}, async () => {// delete everything from db after tests
-  await mongoose.connection.db.dropDatabase();
-});
+// mongoose.connect(process.env.MONGOOSE_TEST_URI, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// }, async () => {// delete everything from db after tests
+//   await mongoose.connection.db.dropDatabase();
+// });
 
 
 describe('server', () => {
@@ -49,9 +50,9 @@ it('bad method', async () => {
 });
 
   describe('api server', () => {
-  afterAll(() => {// we need to close the connection after tests
-    mongoose.connection.close();
-  });
+  // afterAll(() => {// we need to close the connection after tests
+  //   mongoose.connection.close();
+  // });
   let id;
     it('should create a new food using post request', async () => {
         //arrange
