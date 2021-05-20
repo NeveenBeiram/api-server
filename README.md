@@ -4,7 +4,7 @@
 ## api-server
 ### Author: Neveen Beiram
 
-* [deployment for main branch ](https://neveen-basic-api-server.herokuapp.com/) .
+* [deployment for main branch ](https://neveen-api-server.herokuapp.com/) .
 * [submission PR](https://github.com/NeveenBeiram/api-server/pulls) .
 * [tests report](https://github.com/NeveenBeiram/api-server/actions) .
  
@@ -227,15 +227,17 @@
   }
 
   ```
-
+<hr>
 
 #### Tests
 
 - Unit Tests: `npm run test`
-- Lint Tests: `npm run lint`
+![test](./test.png)
 
+
+<hr>
 
 #### UML
 
-![uml](./uml.pn)
+![uml](./umlapi.png)
 
